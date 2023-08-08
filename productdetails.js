@@ -8,7 +8,7 @@ async function getProductDetails(id){
         allDetails=data;
         console.log(data);
     }catch(err){
-        console.log("Error is:-", err);
+        alert(err.message);
     }
     showProductDetails(allDetails);
 }
@@ -23,7 +23,6 @@ function showProductDetails(product){
     document.getElementById("discount").textContent+=product.discountPercentage;
     document.getElementById("description").textContent+=product.description;
 }
-
 
 function getProductID(){
     const prodID = localStorage.getItem("productId");

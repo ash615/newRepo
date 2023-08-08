@@ -11,9 +11,10 @@ async function addNewProduct(requestObj){
         if(data){
             alert(`Product added Successfully...`)
         }
+        window.location.href="index.html";
     }
     catch(err){
-        console.log("Error is:-", err);
+        alert(err.message);
     }
 }
 
@@ -22,16 +23,9 @@ function handleFormSubmit(e) {
     
     const myForm = document.getElementById('productForm');
     const formData = new FormData(myForm);
-
     addNewProduct(formData);
-    window.location.href="../home/index.html"
-    // formData.forEach((value, key) => {
-    //   formDataObject[key] = value;
-    // });
-  
-    // Perform actions with form data (e.g., send to server, process data)
     console.log('Form data:',formData);
-  }
+}
 
 const form = document.getElementById("productForm");
 form.addEventListener("submit", handleFormSubmit);
